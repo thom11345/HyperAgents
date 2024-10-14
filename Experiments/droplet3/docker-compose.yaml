@@ -1,0 +1,18 @@
+version: "3"
+services:
+  hyperagents5:
+    image: hyper-agents-eval
+    environment:
+      AGENT_START: 10
+      AGENT_END: 10
+      CONTAINER: 5
+    volumes:
+      - ./results/5:/run/results
+  hyperagents6:
+    image: hyper-agents-eval
+    environment:
+      AGENT_START: 9
+      AGENT_END: 9
+      CONTAINER: 6
+    volumes:
+      - ./results/6:/run/results
