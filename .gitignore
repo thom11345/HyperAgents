@@ -1,10 +1,4 @@
-AI/.classpath
-AI/.project
-AI/.settings/*
 AI/bin/*
-Models/__pycache__/ClusterProcessor.cpython-312.pyc
-Models/__pycache__/DataProcessor.cpython-312.pyc
-Models/__pycache__/DistanceProcessor.cpython-312.pyc
-Models/__pycache__/ModelProcessor.cpython-312.pyc
+Models/__pycache__/*
 AI/src/agents/models/agents.pmml
 AI/src/agents/models/heuristics.pmml
