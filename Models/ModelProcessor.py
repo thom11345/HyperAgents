@@ -1,15 +1,14 @@
 import pandas as pd
 
 from sklearn.base import is_classifier
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
-from sklearn.dummy import DummyRegressor
 from sklearn.multioutput import MultiOutputRegressor
 from sklearn.model_selection import cross_val_predict, KFold
 from sklearn.impute import SimpleImputer
 
 from sklearn2pmml import PMMLPipeline, ColumnTransformer, sklearn2pmml
 
-import DataProcessor
+from DataProcessor import load_agents_data, load_concepts_data, load_heuristics_data, load_ludemes_data
+
 
 def filter_random_agents(agents_data, threshold):
     random_counts = {name: 0 for name in agents_data.drop(columns=['GameName']).columns}
@@ -20,14 +19,14 @@ def filter_random_agents(agents_data, threshold):
     return agents_data[['GameName'] + [key for key, value in random_counts.items() if value/agents_data.shape[0] < threshold]]
 
 def load_target_data():
-    heuristics_data = DataProcessor.load_heuristics_data()
-    agents_data = DataProcessor.load_agents_data()
+    heuristics_data = load_heuristics_data()
+    agents_data = load_agents_data()
 
     return filter_random_agents(agents_data, 0.5), heuristics_data
 
 def load_feature_data():
-    concepts_data = DataProcessor.load_concepts_data()
-    ludemes_data = DataProcessor.load_ludemes_data()
+    concepts_data = load_concepts_data()
+    ludemes_data = load_ludemes_data()
     features = pd.merge(concepts_data, ludemes_data, on='GameName')
 
     return features

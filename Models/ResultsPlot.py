@@ -25,8 +25,8 @@ plt.figure(figsize=(10, 6))
 
 plt.bar(agent_scores['agent_name'], agent_scores['mean_score'], yerr=agent_scores['err'], capsize=5)
 plt.xlabel('Agent Name')
-plt.ylabel('Average Win Rate')
-plt.xticks(rotation=45)
+plt.ylabel('Average Win Rate (%)')
+plt.xticks(rotation=90)
 plt.grid(axis='y')
 plt.tight_layout()
  
