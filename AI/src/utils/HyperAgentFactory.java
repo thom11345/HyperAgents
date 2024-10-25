@@ -35,7 +35,7 @@ public class HyperAgentFactory {
 		}))
 			System.err.println("WARNING! Failed to register Ensemble because one with that name already existed!");
 
-		if (!AIRegistry.registerAI("Ensemble 0", () -> {
+		if (!AIRegistry.registerAI("Wieghted Ensemble", () -> {
 			return new EnsembleAgent(0d);
 		}, (game) -> {
 			return true;
@@ -49,13 +49,13 @@ public class HyperAgentFactory {
 		}))
 			System.err.println("WARNING! Failed to register Ensemble 50 because one with that name already existed!");
 
-		if (!AIRegistry.registerAI("Ensemble -1", () -> {
+		if (!AIRegistry.registerAI("(P) Weighted Ensemble", () -> {
 			return new EnsembleAgent(-1d);
 		}, (game) -> {
 			return true;
 		}))
 			System.err.println("WARNING! Failed to register Ensemble -1 because one with that name already existed!");
-		if (!AIRegistry.registerAI("Ensemble -2", () -> {
+		if (!AIRegistry.registerAI("(P) Ensemble", () -> {
 			return new EnsembleAgent(-2d);
 		}, (game) -> {
 			return true;
@@ -79,6 +79,12 @@ public class HyperAgentFactory {
 			return new EnsembleAgent(-2d);
 		case "Ensemble -50":
 			return new EnsembleAgent(-0.5);
+		case "Weighted Ensemble":
+			return new EnsembleAgent(0);
+		case "Parallel Weighted Ensemble":
+			return new EnsembleAgent(-1d);
+		case "Parallel Ensemble":
+			return new EnsembleAgent(-2d);
 		default:
 			return AIFactory.createAI(aiName);
 		}
@@ -111,6 +117,15 @@ public class HyperAgentFactory {
 			break;
 		case "Ensemble -50":
 			agent = new EnsembleAgent(-0.5);
+			break;
+		case "Weighted Ensemble":
+			agent = new EnsembleAgent(0);
+			break;
+		case "Parallel Weighted Ensemble":
+			agent = new EnsembleAgent(-1d);
+			break;
+		case "Parallel Ensemble":
+			agent = new EnsembleAgent(-2d);
 			break;
 		case "MAST":
 			agent = new MCTS(new UCB1(), new MAST(200, 0.1), new MonteCarloBackprop(), new RobustChild());

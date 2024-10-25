@@ -83,7 +83,7 @@ public class EnsembleAgent extends AI {
 		if (breakPoint == -2d) {
 			this.parallel = true;
 			this.weighted = false;
-			this.friendlyName = "Ensemble Parallel";
+			this.friendlyName = "Parallel Ensemble";
 			return;
 		}
 		/** Value < 0 -> weighted parallel */
@@ -91,7 +91,7 @@ public class EnsembleAgent extends AI {
 			this.parallel = true;
 			breakPoint = breakPoint == -1d ? 0 : breakPoint * -1;
 		}
-		this.friendlyName = "Ensemble " + breakPoint * 100 + (this.parallel ? " Parallel" : "");
+		this.friendlyName = (this.parallel ? " Parallel " : "") + "Weighted Ensemble";
 		this.weighted = true;
 		this.threshold = breakPoint;
 	}
