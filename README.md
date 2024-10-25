@@ -2,9 +2,19 @@
 
 ## Overview
 
-## Requirements
+### Ludii AI
 
-Create PMML model files for the Ludii agents by running CreatePMMLs.py in the Models folder
+AI directory contains the Ludii Hyper-agents, created as an Eclipse project
+
+Create PMML model files for the Ludii Hyper-agents by running CreatePMMLs.py in the Models folder
+
+main/LaunchLudii.java launches the Ludii UI
+
+### Python Models and Analysis
+
+Models directory contains code for training evaluating and exporting the portfolio models
+
+## Requirements
 
 ### Python
 

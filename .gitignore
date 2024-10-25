@@ -3,3 +3,5 @@ Models/__pycache__/*
 AI/src/agents/models/agents.pmml
 AI/src/agents/models/heuristics.pmml
 AI/.pydevproject
+AI/ludii.trl
+AI/ludii_preferences.json
