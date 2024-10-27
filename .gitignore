@@ -5,3 +5,7 @@ AI/src/agents/models/heuristics.pmml
 AI/.pydevproject
 AI/ludii.trl
 AI/ludii_preferences.json
+AI/build/error_report.txt
+AI/build/ludii_preferences.json
+AI/build/ludii.trl
+AI/error_report.txt
